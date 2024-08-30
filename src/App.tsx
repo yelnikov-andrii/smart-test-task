@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import Table from './components/Table';
 import Header from './components/Header';
+import { UserI } from './types';
 
 function App() {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState<UserI[]>([]);
 
   async function getDataFromServer() {
     const response = await fetch('https://jsonplaceholder.typicode.com/users');
@@ -14,7 +15,7 @@ function App() {
   useEffect(() => {
     getDataFromServer();
   }, []);
-  console.log(data)
+
   return (
     <>
       <Header />

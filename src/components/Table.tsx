@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { DataGrid, GridColDef } from '@mui/x-data-grid';
 import Paper from '@mui/material/Paper';
+import { UserI } from '../types';
 
 const columns: GridColDef[] = [
     { field: 'id', headerName: 'ID', width: 70 },
@@ -20,7 +21,7 @@ const columns: GridColDef[] = [
 
 const paginationModel = { page: 0, pageSize: 5 };
 
-export default function Table({ data }: { data: any }) {
+export default function Table({ data }: { data: UserI[] }) {
     return (
         <Paper sx={{ height: 400, width: '100%' }}>
             <DataGrid
